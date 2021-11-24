@@ -1,0 +1,4 @@
+FROM balenalib/%%BALENA_MACHINE_NAME%%-alpine:latest
+RUN apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing shellinabox
+ENTRYPOINT ["shellinaboxd", "-t", "-p80", "-s/:root:nogroup:/:iostat -z -m -t -d 3600"]
+
